@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Blob Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Azure Blob Explorer</h1>
+            <div class="url-input-section">
+                <input type="text" id="blobUrlInput" placeholder="Enter Azure Blob Storage URL (e.g., https://mystorageaccount.blob.core.windows.net/mycontainer)" />
+                <button id="connectBtn">Connect</button>
+            </div>
+        </header>
+
+        <div class="explorer-container">
+            <div class="toolbar">
+                <div class="breadcrumbs" id="breadcrumbs">
+                    <span class="breadcrumb-item" data-path="">Home</span>
+                </div>
+                <div class="view-controls">
+                    <button id="refreshBtn" title="Refresh">🔄</button>
+                </div>
+            </div>
+
+            <div class="explorer-content">
+                <div class="sidebar">
+                    <div class="tree-view" id="treeView">
+                        <div class="tree-item root-item" data-path="">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-label">Container</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-content">
+                    <div class="loading" id="loading" style="display: none;">
+                        Loading...
+                    </div>
+                    <div class="error-message" id="errorMessage" style="display: none;"></div>
+                    <div class="file-list" id="fileList">
+                        <div class="welcome-message">
+                            <h3>Welcome to Azure Blob Explorer</h3>
+                            <p>Enter an Azure Blob Storage URL above to get started.</p>
+                            <p>Example: https://mystorageaccount.blob.core.windows.net/mycontainer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
